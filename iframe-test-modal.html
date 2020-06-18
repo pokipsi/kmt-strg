@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .iframe-wrapper {
+            height: 500px;
+            width:100%; 
+            -webkit-overflow-scrolling: touch; 
+            overflow-y: scroll;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+    <script>
+        function modal(target) {
+            var html = `
+            <div class="modal">
+                <div class="iframe-wrapper">
+                    <iframe src="iframe-content.html"></iframe>
+                </div>            
+            </div>`;
+            var container = document.getElementById('modal-container');
+            container.innerHTML = html;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="modal()">show modal</button>
+    <div id="modal-container"></div>
+</body>
+</html>
