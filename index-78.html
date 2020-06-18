@@ -7,6 +7,7 @@
     <link href="bs.css?id=1" rel="stylesheet">
     <link href="app.css?id=2" rel="stylesheet">
     <script src="public/js/prevent.min.js"></script>
+    <script src="script.js?id=2"></script>
 </head>
 
 <body>
@@ -37,7 +38,7 @@
 
             <div class="modal-backdrop modal-backdrop--active" data="[object Object]"><!----> <!----> <!----> 
                 <div class="kmt-modal-wrapper">
-                    <div class="kmt-modal __modal--type-3" style="width: 80%;">
+                    <div class="kmt-modal __modal--type-3" style="width: 80%;" id="target">
                         <div class="bg-white lg:border-rounded lg:pb-4 h-p100 lg:mb-48 d-flex flex-column">
                             <div class="list-view __lvh-type-auto">
                                 <div class="list-item p-16 lg:p-32 position-relative border-bottom-grey-100 flex-wrap"><!----> 
@@ -48,7 +49,7 @@
                                     </a> 
                                     <h2 class="text-center d-block d-lg-none py-8">Identitätsbestätigung</h2>
                                 </div>
-                                </div> <div class="d-flex flex-column h-p100 scrollable-content">
+                                </div> <div class="d-flex flex-column h-p100 scrollable-content" id="scroll-target">
                                     <div class="bg-white"><!----> 
                                         <div id="idensic" class="iframe-wrap scrollbar-3 position-relative" style="height: 1516px;">
                                             <div class="d-flex flex-column" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px;">
@@ -79,7 +80,10 @@
         </div>
     </div>
     <script>
-        var target = document.getElementById("target");
+
+        setWrapperHeight();
+
+        var target = document.getElementById("scroll-target");
         disableBodyScroll(target);
 
         setTimeout(() => {
