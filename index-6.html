@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <div class="page homepage">
-            <section class="container">
+            <section class="container" id="section">
 
                 <div class="d-flex flex-column">
                     <div class="w-p100 h-96 bg-green mb-48"></div>
@@ -33,7 +33,7 @@
                 </div>
 
             </section> 
-            <footer class="lg:p-0 pb-32 border-top-grey-200 mt-32"></footer> 
+            <footer class="lg:p-0 pb-32 border-top-grey-200 mt-32" id="footer"></footer> 
 
             <div class="modal-backdrop modal-backdrop--active" data="[object Object]"><!----> <!----> <!----> 
                 <div class="kmt-modal-wrapper">
@@ -67,6 +67,13 @@
     <script>
         var target = document.getElementById("target");
         disableBodyScroll(target);
+
+        setTimeout(() => {
+            var section = document.getElementById("section");
+            var footer = document.getElementById("footer");
+            section.style.display = 'none';
+            footer.style.display = 'none';
+        }, 3000);
     </script>
 </body>
 
